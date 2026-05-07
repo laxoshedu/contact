@@ -1,325 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="monetag" content="455d479d0aa1e26509db0944deaee7c2">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Laxoshedu</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO TITLES AND DESCRIPTION -->
+<title>Contact Us | Laxoshedu Quiz Platform</title>
+<meta name="description" content="Get in touch with the Laxoshedu Quiz Platform team. We're here to help with your questions, feedback, or support needs.">
+
+<!-- NOINDEX to prevent search engines from indexing this page -->
+<meta name="robots" content="noindex, nofollow">
+
+<!-- OPEN GRAPH (Social Media) -->
+<meta property="og:title" content="Contact Us | Laxoshedu Quiz Platform">
+<meta property="og:description" content="We'd love to hear from you. Reach out to the Laxoshedu team for support and inquiries.">
+<meta property="og:type" content="website">
+
+<style>
+/* FONT IMPORT - STYLISH & MODERN */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #4a90e2;
+    --secondary: #f5a623;
+    --tertiary: #ff7e79;
+    --success: #2ecc71;
+    --bg-light: #f4f7f9;
+    --text-dark: #333;
+    --text-light: #f8f9fa;
+    --white: #ffffff;
+    --border-light: #e2e8f0;
+    --shadow: rgba(0, 0, 0, 0.1);
+
+    /* Glassmorphism & Liquid Effect Variables */
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --blur-amount: 15px;
     
-    <style>
-        :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #6c5ce7;
-            --bg-color: #f3f4f6;
-            --text-color: #333;
-            --card-bg: #ffffff;
-        }
+    /* Theme Variables - LIGHT MODE DEFAULT */
+    --body-bg: #f4f7f9;
+    --body-color: #333;
+    --card-text: #666;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* VIBRANT BLUE DARK MODE THEME */
+[data-theme="dark"] {
+    --primary: #64b5f6;
+    --secondary: #ffa726;
+    --tertiary: #ff8a80;
+    --bg-light: #0a1929;
+    --text-dark: #e3f2fd;
+    --text-light: #e3f2fd;
+    --white: #132f4c;
+    --border-light: #1e4976;
+    --glass-bg: rgba(19, 47, 76, 0.7);
+    --glass-border: rgba(100, 181, 246, 0.2);
+    --body-bg: linear-gradient(135deg, #0a1929 0%, #001e3c 100%);
+    --body-color: #e3f2fd;
+    --card-text: #b0bec5;
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: var(--text-color);
-            line-height: 1.6;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
+*{ margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
+body{ background: var(--body-bg); color: var(--body-color); line-height: 1.7; overflow-x: hidden; transition: background 0.5s ease, color 0.5s ease; }
+html { scroll-behavior: smooth; }
 
-        /* Background Floating Animation */
-        .circles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
+/* LIQUID FLOATING BG BLOBS */
+.blob-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+.blob { position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.6; transition: opacity 0.5s ease, background 0.5s ease; }
+.blob1 { width: 450px; height: 450px; background: rgba(74, 144, 226, 0.4); top: -100px; left: -150px; animation: move1 30s infinite alternate; }
+.blob2 { width: 350px; height: 350px; background: rgba(245, 166, 35, 0.3); bottom: -50px; right: -100px; animation: move2 35s infinite alternate-reverse; }
+[data-theme="dark"] .blob1 { background: rgba(100, 181, 246, 0.5); opacity: 0.7; }
+[data-theme="dark"] .blob2 { background: rgba(66, 165, 245, 0.4); opacity: 0.6; }
+@keyframes move1 { 0% { transform: translate(0, 0) rotate(0deg) scale(1); } 100% { transform: translate(15vw, -10vh) rotate(180deg) scale(1.4); } }
+@keyframes move2 { 0% { transform: translate(0, 0) rotate(0deg) scale(1); } 100% { transform: translate(-20vw, 15vh) rotate(-180deg) scale(1.2); } }
 
-        .circles li {
-            position: absolute;
-            display: block;
-            list-style: none;
-            width: 20px;
-            height: 20px;
-            background: rgba(74, 144, 226, 0.2);
-            animation: animate 25s linear infinite;
-            bottom: -150px;
-            border-radius: 50%;
-        }
+/* GLASSMORPHISM HEADER */
+header{ display:flex; justify-content:space-between; align-items:center; padding: 18px 35px; background: var(--glass-bg); backdrop-filter: blur(var(--blur-amount)); position: sticky; top: 15px; z-index: 1000; margin: 15px; border-radius: 50px; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15); border: 1px solid var(--glass-border); }
+.logo{ font-size:24px; font-weight:800; color: var(--primary); display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo svg { stroke: var(--primary); }
+.menu-btn { display: none; font-size: 28px; cursor: pointer; color: var(--text-dark); }
+nav { display: flex; align-items: center; gap: 5px; }
+nav a{ color: var(--text-dark); text-decoration:none; padding: 8px 18px; font-size:16px; font-weight: 600; transition: all 0.3s ease; border-radius: 25px; }
+nav a:hover{ color: var(--primary); background: rgba(74, 144, 226, 0.1); }
+.theme-toggle { background: var(--glass-bg); border: 2px solid var(--glass-border); border-radius: 50px; padding: 8px 18px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 600; color: var(--text-dark); margin-left: 10px; }
+.theme-toggle svg { width: 20px; height: 20px; stroke: var(--primary); }
 
-        .circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
-        .circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
-        .circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
-        .circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
-        .circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
-        .circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
-        .circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
-        .circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
-        .circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
-        .circles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 0s; animation-duration: 11s; }
+/* MAIN CONTENT SECTION */
+.content-section { max-width: 950px; margin: 60px auto; padding: 60px 50px; background: var(--glass-bg); backdrop-filter: blur(var(--blur-amount)); border-radius: 25px; box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1); border: 1px solid var(--glass-border); }
+.content-section h2 { font-size: 38px; margin-bottom: 20px; color: var(--text-dark); text-align: center; font-weight: 800; position: relative; padding-bottom: 20px; }
+.content-section h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: linear-gradient(90deg, var(--primary), var(--secondary)); border-radius: 2px; }
+.intro-text { text-align: center; color: var(--card-text); font-size: 18px; max-width: 700px; margin: 0 auto 50px auto; }
 
-        @keyframes animate {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
-            100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
-        }
+/* CONTACT INFO BLOCKS */
+.contact-info-container { display: flex; justify-content: center; gap: 30px; margin-bottom: 60px; flex-wrap: wrap; }
+.contact-item { background: var(--glass-bg); border: 1px solid var(--glass-border); padding: 30px; border-radius: 20px; text-align: center; flex: 1; min-width: 250px; transition: all 0.3s ease; }
+.contact-item:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2); }
+.contact-item svg { width: 40px; height: 40px; color: var(--primary); margin-bottom: 15px; }
+.contact-item h3 { color: var(--text-dark); font-size: 20px; margin-bottom: 10px; }
+.contact-item a { color: var(--card-text); text-decoration: none; font-weight: 500; font-size: 16px; word-break: break-all; transition: color 0.3s; }
+.contact-item a:hover { color: var(--primary); }
 
-        /* Container & Header */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
+.text-block { margin-bottom: 35px; font-size: 17px; color: var(--card-text); text-align: left; line-height: 1.8; }
+.text-block h3 { color: var(--text-dark); font-size: 22px; margin-bottom: 10px; margin-top: 25px; font-weight: 700; border-left: 4px solid var(--primary); padding-left: 15px; }
+.text-block p { margin-bottom: 15px; }
 
-        header {
-            margin-bottom: 30px;
-            animation: fadeInDown 1s ease-out;
-        }
+/* FOOTER */
+footer{ margin-top:120px; padding:70px 20px; background: linear-gradient(135deg, #2c3e50, #34495e); text-align:center; color: #f8f9fa; position: relative; }
+[data-theme="dark"] footer { background: linear-gradient(135deg, #001e3c, #0a1929); }
+footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--secondary), var(--tertiary)); }
+footer p { font-size: 16px; margin-bottom: 10px; }
+.footer-links{ margin-top:25px; display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; }
+.footer-links a{ color: #f8f9fa; opacity: 0.85; text-decoration:none; font-size:15px; transition: all 0.3s ease; font-weight: 500; }
+.footer-links a:hover{ opacity: 1; color: var(--primary); transform: translateY(-2px); }
 
-        h1 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            font-weight: 300;
-        }
-
-        /* Contact Grid */
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        /* General Card Style */
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Help Message Style */
-        .help-message-card {
-            animation-delay: 0.1s;
-            text-align: left;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .help-message-card h2 {
-            font-size: 1.4rem;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .help-message-card p {
-            color: #555;
-            font-size: 1rem;
-        }
-
-        /* Owner Profile Style */
-        .owner-card {
-            animation-delay: 0.3s;
-        }
-
-        .owner-icon {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-
-        .owner-name {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .owner-title {
-            color: #777;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        /* Contact Methods Style */
-        .contact-methods {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .method-card {
-            animation-delay: 0.5s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .method-icon {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .method-title {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 5px;
-        }
-
-        .contact-link {
-            text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-            word-break: break-all;
-        }
-
-        .contact-link:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 50px;
-            color: #666;
-            animation: fadeIn 2s ease;
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            .contact-methods {
-                grid-template-columns: 1fr;
-            }
-            h1 { font-size: 2rem; }
-            .help-message-card { text-align: center; }
-            .help-message-card h2 { justify-content: center; }
-        }
-    </style>
+/* RESPONSIVE */
+@media(max-width: 768px){
+    header { margin: 0; border-radius: 0; top: 0; padding: 15px 20px; flex-wrap: wrap; }
+    .menu-btn { display: block; }
+    nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--glass-bg); backdrop-filter: blur(var(--blur-amount)); flex-direction: column; padding: 25px 0; border-top: 2px solid var(--border-light); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); gap: 0; }
+    nav.active { display: flex; }
+    nav a { margin: 10px 0; font-size: 18px; width: 100%; text-align: center; padding: 12px 20px; }
+    .theme-toggle { margin: 10px auto; width: 90%; justify-content: center; }
+    .content-section { padding: 40px 30px; margin: 40px 15px; }
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Animated Background -->
-    <ul class="circles">
-        <li></li><li></li><li></li><li></li><li></li>
-        <li></li><li></li><li></li><li></li><li></li>
-    </ul>
+<!-- FLOATING BG BLOBS -->
+<div class="blob-container">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+</div>
 
-    <div class="container">
-        <header>
-            <h1>Contact Us</h1>
-            <p class="subtitle">We'd love to hear from you</p>
-        </header>
+<header>
+    <a href="index.html" class="logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
+        Laxoshedu Quiz
+    </a>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#founders">Founders</a>
+        <a href="index.html#partners">Partners</a>
+        <a href="index.html#faq">FAQ</a>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <svg id="theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg id="theme-icon-dark" style="display:none;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <span id="theme-text">Light</span>
+        </button>
+    </nav>
+</header>
 
-        <div class="main-content">
-            
-            <!-- Polite Help Message -->
-            <div class="card help-message-card">
-                <h2><i class="fas fa-heart"></i> We Are Here to Help!</h2>
-                <p>
-                    At Laxoshedu, your learning experience is our top priority. If you are facing any technical issues, have questions about a quiz, or just want to share your feedback, please do not hesitate to reach out. We are dedicated to solving any problem you may have regarding our website politely and quickly.
-                </p>
+<main>
+    <section class="content-section">
+        <h2>Contact Us</h2>
+        <p class="intro-text">We're here to help and eager to hear from you. Whether you have a question, a brilliant idea, or need assistance, you've come to the right place. Please use the contact details below to reach our team.</p>
+        
+        <div class="contact-info-container">
+            <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <h3>Email Us</h3>
+                <a href="mailto:santhoshrgg2@gmail.com">santhoshrgg2@gmail.com</a>
             </div>
-
-            <!-- Owner Profile Card -->
-            <div class="card owner-card">
-                <div class="owner-icon">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <div class="owner-title">Owner & Founder</div>
-                <h2 class="owner-name">Ranganath Gari Santhosh</h2>
-                <p style="margin-top:5px; color:#888;">Laxoshedu Educational Quiz Website</p>
-            </div>
-
-            <!-- Contact Methods Container -->
-            <div class="contact-methods">
-                
-                <!-- Phone Card -->
-                <div class="card method-card">
-                    <div class="method-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <h3 class="method-title">Call Us</h3>
-                    <a href="tel:+917093636625" class="contact-link">+917093636625</a>
-                </div>
-
-                <!-- Email Card -->
-                <div class="card method-card">
-                    <div class="method-icon">
-                        <i class="fas fa-envelope-open-text"></i>
-                    </div>
-                    <h3 class="method-title">Email Us</h3>
-                    <a href="mailto:santhoshrgg2@gmail.com" class="contact-link">santhoshrgg2@gmail.com</a>
-                </div>
-
+            <div class="contact-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <h3>Call Us</h3>
+                <a href="tel:+917093636625">+91 70936 36625</a>
             </div>
         </div>
 
-        <footer>
-            <small>&copy; 2025 Laxoshedu. All rights reserved.</small>
-        </footer>
+        <div class="text-block">
+            <h3>For Technical Support</h3>
+            <p>Encountering a bug or a technical glitch? For the fastest support, please email us with a detailed description of the issue, the web browser you are using (e.g., Chrome, Safari), and any relevant screenshots. This information helps our team diagnose and resolve your problem much more efficiently.</p>
+        </div>
+        
+        <div class="text-block">
+            <h3>Feedback and Suggestions</h3>
+            <p>Your ideas are what help us grow and improve. If you have a suggestion for a new feature or an improvement to an existing one, we would love to hear it. We thrive on community feedback to make Laxoshedu better for everyone.</p>
+        </div>
+
+        <div class="text-block">
+            <h3>Our Commitment</h3>
+            <p>We are a small team dedicated to providing the best possible experience. We aim to respond to all email inquiries within 24-48 business hours. Please note that our phone support hours may vary. Thank you for your patience and for being a valued member of the Laxoshedu community.</p>
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    <p id="copyright"></p>
+    <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-and-conditions.html">Terms & Conditions</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="sitemap/">Sitemap</a>
+        <a href="https://laxoshedu.github.io/results/">Results</a>
+        <a href="https://laxoshedu.github.io/editorcodes/">Editorcodes</a>
     </div>
+</footer>
+
+<script>
+// --- THEME TOGGLE FUNCTIONALITY ---
+function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    const lightIcon = document.getElementById('theme-icon-light');
+    const darkIcon = document.getElementById('theme-icon-dark');
+    const themeText = document.getElementById('theme-text');
+    if (newTheme === 'dark') { lightIcon.style.display = 'none'; darkIcon.style.display = 'block'; themeText.textContent = 'Dark'; } 
+    else { lightIcon.style.display = 'block'; darkIcon.style.display = 'none'; themeText.textContent = 'Light'; }
+}
+window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    const lightIcon = document.getElementById('theme-icon-light');
+    const darkIcon = document.getElementById('theme-icon-dark');
+    const themeText = document.getElementById('theme-text');
+    if (savedTheme === 'dark') { lightIcon.style.display = 'none'; darkIcon.style.display = 'block'; themeText.textContent = 'Dark'; } 
+    else { lightIcon.style.display = 'block'; darkIcon.style.display = 'none'; themeText.textContent = 'Light'; }
+});
+
+// --- MOBILE MENU ---
+function toggleMenu() { document.getElementById("navbar").classList.toggle("active"); }
+
+// --- DYNAMIC YEAR ---
+document.getElementById('copyright').textContent = `© ${new Date().getFullYear()} Laxoshedu Quiz Platform. All rights reserved.`;
+</script>
 
 </body>
 </html>
